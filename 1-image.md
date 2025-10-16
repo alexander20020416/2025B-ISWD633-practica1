@@ -14,7 +14,7 @@ docker pull <nombre imagen>:<tag>
 ```
 
 Descargar la imagen **hello-world**
-C:\Users\ASUS TUF F15>docker pull hello-world
+# C:\Users\ASUS TUF F15>docker pull hello-world
 Using default tag: latest
 latest: Pulling from library/hello-world
 17eec7bbc9d7: Pull complete
@@ -23,7 +23,7 @@ Status: Downloaded newer image for hello-world:latest
 docker.io/library/hello-world:latest
 
 **¿Qué es nginx**
-Es un servidor web de alto rendimiento que también puede funcionar como:
+# Es un servidor web de alto rendimiento que también puede funcionar como:
 Servidor proxy inverso (redirige peticiones a otros servidores, útil para balancear carga o proteger servicios internos).
 Balanceador de carga (distribuye las solicitudes entre varios servidores para mejorar rendimiento y disponibilidad).
 Servidor de correo (IMAP/POP3/SMTP proxy) en algunos casos.
@@ -31,7 +31,7 @@ Servidor de contenido estático (imágenes, CSS, JavaScript, archivos).
 
 
 Descargar la imagen  **nginx** en la versión **alpine**
-C:\Users\ASUS TUF F15>docker pull nginx:alpine
+# C:\Users\ASUS TUF F15>docker pull nginx:alpine
 alpine: Pulling from library/nginx
 76c9bcaa4163: Pull complete
 83ce83cd9960: Pull complete
@@ -50,7 +50,7 @@ docker.io/library/nginx:alpine
 ```
 docker images
 ```
-
+# 
 <img width="737" height="103" alt="imagen" src="https://github.com/user-attachments/assets/32347538-89e3-4429-b9a4-e371b8816407" />
 
 
