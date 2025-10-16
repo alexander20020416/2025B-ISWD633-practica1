@@ -82,9 +82,9 @@ Status: Downloaded newer image for jenkins/jenkins:alpine3.18-jdk11
 1734130c1dbb58125bb21526e0fd603bdd04a21d1945e7e1bfe2122592275054
 ```
 # COLOCAR UNA CAPTURA DE PANTALLA  DEL ACCESO http://localhost:8080
-```
+
 <img width="1920" height="912" alt="imagen" src="https://github.com/user-attachments/assets/b54c9250-1b94-445f-90f8-d1bdc54dc437" />
-```
+
 ### ¿Cómo obtener la contraseña solicitada?
 Para obtener la contraseña solicitada es necesario ingresar al contenedor.
 
