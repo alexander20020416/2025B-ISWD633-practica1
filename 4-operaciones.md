@@ -102,6 +102,7 @@ Ejecutar
 whoami
 ```
 # COLOCAR UNA CAPTURA DE PANTALLA
+<img width="860" height="152" alt="imagen" src="https://github.com/user-attachments/assets/be38f4d9-b501-46fe-9dce-8be9c586ee1f" />
 
 **Si se visualiza el mensaje command not found, considerar**
 El problema se debe a que no se ha asignado un terminal de salida al contenedor al ejecutar el comando. Cuando usas docker exec -i jenkins-server /bin/bash en Windows, el comando se ejecuta pero no hay un terminal asignado para mostrar la salida del comando ls.
@@ -120,18 +121,122 @@ docker exec -it <nombre contenedor> <programa o comando>
 ```
 
 ### Ahora puedes acceder al contenedor de jenkins y obtener la contraseña ubicada en /var/jenkins_home/secrets/initialAdminPassword
-
-# COMPLETAR
-
+```
+C:\Users\ASUS TUF F15>docker exec srv-jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+60fd6dd4763e406fabe000b9df50229c
+```
 ### Colocar una captura de pantalla de la ventana que aparece después de colocar la contraseña.
+<img width="1920" height="912" alt="imagen" src="https://github.com/user-attachments/assets/0ffbcb69-5432-4f88-b9ee-425154d84e09" />
+<img width="1920" height="912" alt="imagen" src="https://github.com/user-attachments/assets/101f4898-b504-48e7-b4bb-82c79313c2dd" />
 
 **Para este punto no es necesario continuar con la instalación de Jenkins**
 
 
 ### Para ver los logs de un contenedor
+```
+C:\Users\ASUS TUF F15>docker logs -n 50 srv-jenkins
+Running from: /usr/share/jenkins/jenkins.war
+webroot: /var/jenkins_home/war
+2025-10-17 01:16:35.198+0000 [id=1]     INFO    winstone.Logger#logInternal: Beginning extraction from war file
+2025-10-17 01:16:35.854+0000 [id=1]     WARNING o.e.j.s.handler.ContextHandler#setContextPath: Empty contextPath
+2025-10-17 01:16:35.906+0000 [id=1]     INFO    org.eclipse.jetty.server.Server#doStart: jetty-10.0.18; built: 2023-10-27T01:59:58.245Z; git: 8545fd9bf4cd0d0838f626b405fd4963441546b7; jvm 11.0.21+9
+2025-10-17 01:16:36.096+0000 [id=1]     INFO    o.e.j.w.StandardDescriptorProcessor#visitServlet: NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet
+2025-10-17 01:16:36.149+0000 [id=1]     INFO    o.e.j.s.s.DefaultSessionIdManager#doStart: Session workerName=node0
+2025-10-17 01:16:36.552+0000 [id=1]     INFO    hudson.WebAppMain#contextInitialized: Jenkins home directory: /var/jenkins_home found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+2025-10-17 01:16:36.720+0000 [id=1]     INFO    o.e.j.s.handler.ContextHandler#doStart: Started w.@7158daf2{Jenkins v2.435,/,file:///var/jenkins_home/war/,AVAILABLE}{/var/jenkins_home/war}
+2025-10-17 01:16:36.735+0000 [id=1]     INFO    o.e.j.server.AbstractConnector#doStart: Started ServerConnector@7c1e2a2d{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-10-17 01:16:36.750+0000 [id=1]     INFO    org.eclipse.jetty.server.Server#doStart: Started Server@6c25e6c4{STARTING}[10.0.18,sto=0] @2084ms
+2025-10-17 01:16:36.752+0000 [id=37]    INFO    winstone.Logger#logInternal: Winstone Servlet Engine running: controlPort=disabled
+2025-10-17 01:16:36.896+0000 [id=45]    INFO    jenkins.InitReactorRunner$1#onAttained: Started initialization
+2025-10-17 01:16:36.914+0000 [id=66]    INFO    jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+2025-10-17 01:16:37.485+0000 [id=74]    INFO    jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+2025-10-17 01:16:37.493+0000 [id=44]    INFO    jenkins.InitReactorRunner$1#onAttained: Started all plugins
+2025-10-17 01:16:37.497+0000 [id=53]    INFO    jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+2025-10-17 01:16:37.633+0000 [id=61]    INFO    jenkins.InitReactorRunner$1#onAttained: System config loaded
+2025-10-17 01:16:37.634+0000 [id=62]    INFO    jenkins.InitReactorRunner$1#onAttained: System config adapted
+2025-10-17 01:16:37.635+0000 [id=62]    INFO    jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+2025-10-17 01:16:37.637+0000 [id=73]    INFO    jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+2025-10-17 01:16:37.662+0000 [id=95]    INFO    hudson.util.Retrier#start: Attempt #1 to do the action check updates server
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.codehaus.groovy.vmplugin.v7.Java7$1 (file:/var/jenkins_home/war/WEB-INF/lib/groovy-all-2.4.21.jar) to constructor java.lang.invoke.MethodHandles$Lookup(java.lang.Class,int)
+WARNING: Please consider reporting this to the maintainers of org.codehaus.groovy.vmplugin.v7.Java7$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2025-10-17 01:16:37.952+0000 [id=57]    INFO    jenkins.install.SetupWizard#init:
 
+*************************************************************
+*************************************************************
+*************************************************************
+
+Jenkins initial setup is required. An admin user has been created and a password generated.
+Please use the following password to proceed to installation:
+
+60fd6dd4763e406fabe000b9df50229c
+
+This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
+
+*************************************************************
+*************************************************************
+*************************************************************
+
+2025-10-17 01:16:51.989+0000 [id=53]    INFO    jenkins.InitReactorRunner$1#onAttained: Completed initialization
+2025-10-17 01:16:52.007+0000 [id=32]    INFO    hudson.lifecycle.Lifecycle#onReady: Jenkins is fully up and running
+2025-10-17 01:16:52.861+0000 [id=95]    INFO    h.m.DownloadService$Downloadable#load: Obtained the updated data file for hudson.tasks.Maven.MavenInstaller
+2025-10-17 01:16:52.861+0000 [id=95]    INFO    hudson.util.Retrier#start: Performed the action check updates server successfully at the attempt #1
+```
 ```
 docker logs -n <cantidad de líneas> <nombre o id del contenedor> 
 ```
 -t: para incluir la fecha y la hora
 
+```
+C:\Users\ASUS TUF F15>docker logs -f srv-jenkins
+Running from: /usr/share/jenkins/jenkins.war
+webroot: /var/jenkins_home/war
+2025-10-17 01:16:35.198+0000 [id=1]     INFO    winstone.Logger#logInternal: Beginning extraction from war file
+2025-10-17 01:16:35.854+0000 [id=1]     WARNING o.e.j.s.handler.ContextHandler#setContextPath: Empty contextPath
+2025-10-17 01:16:35.906+0000 [id=1]     INFO    org.eclipse.jetty.server.Server#doStart: jetty-10.0.18; built: 2023-10-27T01:59:58.245Z; git: 8545fd9bf4cd0d0838f626b405fd4963441546b7; jvm 11.0.21+9
+2025-10-17 01:16:36.096+0000 [id=1]     INFO    o.e.j.w.StandardDescriptorProcessor#visitServlet: NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet
+2025-10-17 01:16:36.149+0000 [id=1]     INFO    o.e.j.s.s.DefaultSessionIdManager#doStart: Session workerName=node0
+2025-10-17 01:16:36.552+0000 [id=1]     INFO    hudson.WebAppMain#contextInitialized: Jenkins home directory: /var/jenkins_home found at: EnvVars.masterEnvVars.get("JENKINS_HOME")
+2025-10-17 01:16:36.720+0000 [id=1]     INFO    o.e.j.s.handler.ContextHandler#doStart: Started w.@7158daf2{Jenkins v2.435,/,file:///var/jenkins_home/war/,AVAILABLE}{/var/jenkins_home/war}
+2025-10-17 01:16:36.735+0000 [id=1]     INFO    o.e.j.server.AbstractConnector#doStart: Started ServerConnector@7c1e2a2d{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+2025-10-17 01:16:36.750+0000 [id=1]     INFO    org.eclipse.jetty.server.Server#doStart: Started Server@6c25e6c4{STARTING}[10.0.18,sto=0] @2084ms
+2025-10-17 01:16:36.752+0000 [id=37]    INFO    winstone.Logger#logInternal: Winstone Servlet Engine running: controlPort=disabled
+2025-10-17 01:16:36.896+0000 [id=45]    INFO    jenkins.InitReactorRunner$1#onAttained: Started initialization
+2025-10-17 01:16:36.914+0000 [id=66]    INFO    jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+2025-10-17 01:16:37.485+0000 [id=74]    INFO    jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+2025-10-17 01:16:37.493+0000 [id=44]    INFO    jenkins.InitReactorRunner$1#onAttained: Started all plugins
+2025-10-17 01:16:37.497+0000 [id=53]    INFO    jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+2025-10-17 01:16:37.633+0000 [id=61]    INFO    jenkins.InitReactorRunner$1#onAttained: System config loaded
+2025-10-17 01:16:37.634+0000 [id=62]    INFO    jenkins.InitReactorRunner$1#onAttained: System config adapted
+2025-10-17 01:16:37.635+0000 [id=62]    INFO    jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+2025-10-17 01:16:37.637+0000 [id=73]    INFO    jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+2025-10-17 01:16:37.662+0000 [id=95]    INFO    hudson.util.Retrier#start: Attempt #1 to do the action check updates server
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.codehaus.groovy.vmplugin.v7.Java7$1 (file:/var/jenkins_home/war/WEB-INF/lib/groovy-all-2.4.21.jar) to constructor java.lang.invoke.MethodHandles$Lookup(java.lang.Class,int)
+WARNING: Please consider reporting this to the maintainers of org.codehaus.groovy.vmplugin.v7.Java7$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2025-10-17 01:16:37.952+0000 [id=57]    INFO    jenkins.install.SetupWizard#init:
+
+*************************************************************
+*************************************************************
+*************************************************************
+
+Jenkins initial setup is required. An admin user has been created and a password generated.
+Please use the following password to proceed to installation:
+
+60fd6dd4763e406fabe000b9df50229c
+
+This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
+
+*************************************************************
+*************************************************************
+*************************************************************
+
+2025-10-17 01:16:51.989+0000 [id=53]    INFO    jenkins.InitReactorRunner$1#onAttained: Completed initialization
+2025-10-17 01:16:52.007+0000 [id=32]    INFO    hudson.lifecycle.Lifecycle#onReady: Jenkins is fully up and running
+2025-10-17 01:16:52.861+0000 [id=95]    INFO    h.m.DownloadService$Downloadable#load: Obtained the updated data file for hudson.tasks.Maven.MavenInstaller
+2025-10-17 01:16:52.861+0000 [id=95]    INFO    hudson.util.Retrier#start: Performed the action check updates server successfully at the attempt #1
+```
